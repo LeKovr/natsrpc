@@ -13,9 +13,9 @@ var bufPool = sync.Pool{
 
 // joinSubject 组合字符串成subject
 func joinSubject(s ...string) string {
-	for i, v := range s {
+	for _, v := range s {
 		if v == "" {
-			s = s[i:]
+			s = s[1:]
 		} else {
 			break
 		}

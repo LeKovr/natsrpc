@@ -24,6 +24,8 @@ func TestJoinSubject(t *testing.T) {
 		{"", args{[]string{"a", "", "c"}}, "a.c"},
 		{"", args{[]string{"a", "b", ""}}, "a.b"},
 		{"", args{[]string{"", "a", "", "b"}}, "a.b"},
+		{"", args{[]string{"", "", "", "b", ""}}, "b"},
+		{"", args{[]string{"", "", "", "", "b"}}, "b"},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
